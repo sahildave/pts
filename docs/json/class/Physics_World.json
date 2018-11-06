@@ -1,0 +1,662 @@
+{
+  "name": "World",
+  "source": [
+    [
+      "Physics.ts",
+      11,
+      18
+    ]
+  ],
+  "kind": "Class",
+  "id": 5438,
+  "comment": "A `World` stores and manages [`Body`](#link) and [`Particle`](#link) for 2D physics simulation.\nSee a [Particle demo](../demo/index.html?name=physics.particles) and a [Body demo](../demo/index.html?name=physics.shapes) on the demo page.",
+  "constructor": [
+    {
+      "name": "constructor",
+      "source": [
+        [
+          "Physics.ts",
+          26,
+          51
+        ]
+      ],
+      "id": 5458,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Create a `World` for 2D physics simulation.",
+          "returns": "World",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "bound",
+              "comment": "a rectangular bounding box defined by a Group",
+              "type": "Group",
+              "default": false
+            },
+            {
+              "name": "friction",
+              "comment": "a value between 0 to 1, where 1 means no friction. Default is 1",
+              "type": "number",
+              "default": "1"
+            },
+            {
+              "name": "gravity",
+              "comment": "a number of a Pt to define gravitational force. A number is a shorthand to set `new Pt(0, n)`. Default is 0.\n",
+              "type": "PtLike | number",
+              "default": "0"
+            }
+          ],
+          "tags": []
+        }
+      ]
+    }
+  ],
+  "accessors": [
+    {
+      "name": "bodyCount",
+      "source": [
+        [
+          "Physics.ts",
+          64,
+          15
+        ]
+      ],
+      "id": 5475,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "comment": "Get the number of bodies.",
+      "getter": {
+        "type": "number"
+      },
+      "setter": false
+    },
+    {
+      "name": "damping",
+      "source": [
+        [
+          "Physics.ts",
+          58,
+          13
+        ],
+        [
+          "Physics.ts",
+          59,
+          13
+        ]
+      ],
+      "id": 5471,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "comment": "Current damping in this `World`.",
+      "getter": {
+        "type": "number"
+      },
+      "setter": {
+        "type": "void",
+        "parameters": {
+          "name": "f",
+          "comment": "",
+          "type": "number",
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "friction",
+      "source": [
+        [
+          "Physics.ts",
+          52,
+          14
+        ],
+        [
+          "Physics.ts",
+          53,
+          14
+        ]
+      ],
+      "id": 5467,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "comment": "Current friction in this `World`.",
+      "getter": {
+        "type": "number"
+      },
+      "setter": {
+        "type": "void",
+        "parameters": {
+          "name": "f",
+          "comment": "",
+          "type": "number",
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "gravity",
+      "source": [
+        [
+          "Physics.ts",
+          46,
+          13
+        ],
+        [
+          "Physics.ts",
+          47,
+          13
+        ]
+      ],
+      "id": 5463,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "comment": "Current gravity in this `World`.",
+      "getter": {
+        "type": "Pt"
+      },
+      "setter": {
+        "type": "void",
+        "parameters": {
+          "name": "g",
+          "comment": "",
+          "type": "Pt",
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "particleCount",
+      "source": [
+        [
+          "Physics.ts",
+          69,
+          19
+        ]
+      ],
+      "id": 5477,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "comment": "Get the number of particles.",
+      "getter": {
+        "type": "number"
+      },
+      "setter": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "add",
+      "source": [
+        [
+          "Physics.ts",
+          154,
+          5
+        ]
+      ],
+      "id": 5508,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Add a particle or body to this world.",
+          "returns": "this",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "p",
+              "comment": "`Particle` or `Body` instance",
+              "type": "Particle | Body",
+              "default": false
+            },
+            {
+              "name": "name",
+              "comment": "optional name, which can be referenced in `body()` or `particle()` function to retrieve this back.\n",
+              "type": "string",
+              "default": "\"\""
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "body",
+      "source": [
+        [
+          "Physics.ts",
+          76,
+          6
+        ]
+      ],
+      "id": 5479,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Get a body in this world by index or string id.",
+          "returns": "any",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "id",
+              "comment": "numeric index of the body, or a string id that associates with it.\n",
+              "type": "number | string",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "bodyIndex",
+      "source": [
+        [
+          "Physics.ts",
+          105,
+          11
+        ]
+      ],
+      "id": 5485,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Given a body's name, return its index in the bodies array, or -1 if not found.",
+          "returns": "number",
+          "returns_comment": "index number, or -1 if not found\n",
+          "parameters": [
+            {
+              "name": "name",
+              "comment": "name of the body",
+              "type": "string",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "drawBodies",
+      "source": [
+        [
+          "Physics.ts",
+          144,
+          12
+        ]
+      ],
+      "id": 5501,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Draw bodies using the provided function.",
+          "returns": "void",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "fn",
+              "comment": "a function that draws a body passed in the parameters `(body, index)`.\n",
+              "type": " Fn(p:Body, i:number)",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "drawParticles",
+      "source": [
+        [
+          "Physics.ts",
+          135,
+          15
+        ]
+      ],
+      "id": 5494,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Draw particles using the provided function.",
+          "returns": "void",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "fn",
+              "comment": "a function that draws a particle passed in the parameters `(particle, index)`.\n",
+              "type": " Fn(p:Particle, i:number)",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "integrate",
+      "source": [
+        [
+          "Physics.ts",
+          260,
+          21
+        ]
+      ],
+      "id": 5539,
+      "flags": {
+        "isProtected": true
+      },
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Internal integrate function",
+          "returns": "Particle",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "p",
+              "comment": "particle",
+              "type": "Particle",
+              "default": false
+            },
+            {
+              "name": "dt",
+              "comment": "time changed",
+              "type": "number",
+              "default": false
+            },
+            {
+              "name": "prevDt",
+              "comment": "previous change in time, optional\n",
+              "type": "number",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "particle",
+      "source": [
+        [
+          "Physics.ts",
+          90,
+          10
+        ]
+      ],
+      "id": 5482,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Get a particle in this world by index or string id.",
+          "returns": "any",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "id",
+              "comment": "numeric index of the particle, or a string id that associates with it.\n",
+              "type": "number | string",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "particleIndex",
+      "source": [
+        [
+          "Physics.ts",
+          115,
+          15
+        ]
+      ],
+      "id": 5488,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Given a particle's name, return its index in the particles array, or -1 if not found.",
+          "returns": "number",
+          "returns_comment": "index number, or -1 if not found\n",
+          "parameters": [
+            {
+              "name": "name",
+              "comment": "name of the particle",
+              "type": "string",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "removeBody",
+      "source": [
+        [
+          "Physics.ts",
+          183,
+          12
+        ]
+      ],
+      "id": 5519,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Remove bodies from this world. Support removing a range and negative index.",
+          "returns": "this",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "from",
+              "comment": "Start index, which can be negative (where -1 is at index 0, -2 at index 1, etc)",
+              "type": "number | string",
+              "default": false
+            },
+            {
+              "name": "count",
+              "comment": "Number of items to remove. Default is 1.\n",
+              "type": "number",
+              "default": "1"
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "removeParticle",
+      "source": [
+        [
+          "Physics.ts",
+          197,
+          16
+        ]
+      ],
+      "id": 5523,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Remove particles from this world. Support removing a range and negative index.",
+          "returns": "this",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "from",
+              "comment": "Start index, which can be negative (where -1 is at index 0, -2 at index 1, etc)",
+              "type": "number | string",
+              "default": false
+            },
+            {
+              "name": "count",
+              "comment": "Number of items to remove. Default is 1.\n",
+              "type": "number",
+              "default": "1"
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "update",
+      "source": [
+        [
+          "Physics.ts",
+          124,
+          8
+        ]
+      ],
+      "id": 5491,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Update this world by one time-step.",
+          "returns": "void",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "ms",
+              "comment": "change in time in milliseconds\n",
+              "type": "number",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "boundConstraint",
+      "source": [
+        [
+          "Physics.ts",
+          237,
+          24
+        ]
+      ],
+      "id": 5534,
+      "flags": {
+        "isStatic": true
+      },
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Static function to calculate bounding box constraints.",
+          "returns": "void",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "p",
+              "comment": "particle",
+              "type": "Particle",
+              "default": false
+            },
+            {
+              "name": "rect",
+              "comment": "bounding box defined by a Group",
+              "type": "Group",
+              "default": false
+            },
+            {
+              "name": "damping",
+              "comment": "damping between 0 to 1, where 1 means no damping. Default is 0.75.\n",
+              "type": "number",
+              "default": "0.75"
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "edgeConstraint",
+      "source": [
+        [
+          "Physics.ts",
+          214,
+          23
+        ]
+      ],
+      "id": 5527,
+      "flags": {
+        "isStatic": true
+      },
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Static function to calculate edge constraints between 2 particles.",
+          "returns": "Particle",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "p1",
+              "comment": "particle 1",
+              "type": "Particle",
+              "default": false
+            },
+            {
+              "name": "p2",
+              "comment": "particle 1",
+              "type": "Particle",
+              "default": false
+            },
+            {
+              "name": "dist",
+              "comment": "distance between particles",
+              "type": "number",
+              "default": false
+            },
+            {
+              "name": "stiff",
+              "comment": "stiffness between 0 to 1.",
+              "type": "number",
+              "default": "1"
+            },
+            {
+              "name": "precise",
+              "comment": "use precise distance calculation. Default is `false`.\n",
+              "type": "boolean",
+              "default": "false"
+            }
+          ],
+          "tags": []
+        }
+      ]
+    }
+  ],
+  "variables": [],
+  "properties": [],
+  "flags": {},
+  "extends": [],
+  "implements": []
+}

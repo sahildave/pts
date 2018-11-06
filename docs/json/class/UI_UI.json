@@ -1,0 +1,649 @@
+{
+  "name": "UI",
+  "source": [
+    [
+      "UI.ts",
+      29,
+      15
+    ]
+  ],
+  "kind": "Class",
+  "id": 824,
+  "comment": "**[Experimental]** An abstract class that represents an UI element. It wraps a [`Group`](#link) and supports UI event handling.\nExtend this class to create custom UI elements.",
+  "constructor": [
+    {
+      "name": "constructor",
+      "source": [
+        [
+          "UI.ts",
+          38,
+          33
+        ]
+      ],
+      "id": 838,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Create an UI element. You may also create a new UI using one of the static helper like [`UI.fromRectangle`](#link) or [`UI.fromCircle`](#link).",
+          "returns": "UI",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "group",
+              "comment": "a Group that defines the UI's appearance",
+              "type": "GroupLike",
+              "default": false
+            },
+            {
+              "name": "shape",
+              "comment": "specifies the shape of the Group",
+              "type": "string",
+              "default": false
+            },
+            {
+              "name": "states",
+              "comment": "optional a state object keep track of custom states for this UI",
+              "type": "",
+              "default": "{}"
+            },
+            {
+              "name": "id",
+              "comment": "optional id string\n",
+              "type": "string",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    }
+  ],
+  "accessors": [
+    {
+      "name": "group",
+      "source": [
+        [
+          "UI.ts",
+          109,
+          11
+        ],
+        [
+          "UI.ts",
+          110,
+          11
+        ]
+      ],
+      "id": 871,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "comment": "A group of Pts that defines this UI's shape.",
+      "getter": {
+        "type": "Group"
+      },
+      "setter": {
+        "type": "void",
+        "parameters": {
+          "name": "d",
+          "comment": "",
+          "type": "Group",
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "id",
+      "source": [
+        [
+          "UI.ts",
+          102,
+          8
+        ],
+        [
+          "UI.ts",
+          103,
+          8
+        ]
+      ],
+      "id": 867,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "comment": "An unique id of the UI.",
+      "getter": {
+        "type": "string"
+      },
+      "setter": {
+        "type": "void",
+        "parameters": {
+          "name": "d",
+          "comment": "",
+          "type": "string",
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "shape",
+      "source": [
+        [
+          "UI.ts",
+          116,
+          11
+        ],
+        [
+          "UI.ts",
+          117,
+          11
+        ]
+      ],
+      "id": 875,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "comment": "A string that describes this UI's shape.",
+      "getter": {
+        "type": "string"
+      },
+      "setter": {
+        "type": "void",
+        "parameters": {
+          "name": "d",
+          "comment": "",
+          "type": "string",
+          "default": false
+        }
+      }
+    }
+  ],
+  "methods": [
+    {
+      "name": "hold",
+      "source": [
+        [
+          "UI.ts",
+          189,
+          16
+        ]
+      ],
+      "id": 895,
+      "flags": {
+        "isProtected": true
+      },
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Continue to keep track of an actions even if it's not within this UI. Useful for hover-leave and drag-outside.",
+          "returns": "number",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "key",
+              "comment": "a string defined in [`UIPointerActions`](#link)\n",
+              "type": "string",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "listen",
+      "source": [
+        [
+          "UI.ts",
+          170,
+          8
+        ]
+      ],
+      "id": 891,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Listen for UI events and trigger action handlers.",
+          "returns": "boolean",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "key",
+              "comment": "an action key. Can be one of UIPointerActions or a custom one.",
+              "type": "string",
+              "default": false
+            },
+            {
+              "name": "p",
+              "comment": "a point to check\n",
+              "type": "PtLike",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "off",
+      "source": [
+        [
+          "UI.ts",
+          154,
+          5
+        ]
+      ],
+      "id": 887,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Remove an event handler.",
+          "returns": "boolean",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "key",
+              "comment": "event key",
+              "type": "string",
+              "default": false
+            },
+            {
+              "name": "which",
+              "comment": "an ID number returned by [`UI.on`](#link). If this is not defined, all handlers in this key will be removed.",
+              "type": "number",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "on",
+      "source": [
+        [
+          "UI.ts",
+          142,
+          4
+        ]
+      ],
+      "id": 883,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Add an event handler. Remember this UI will also need to be tracked for events via `UI.track`.",
+          "returns": "number",
+          "returns_comment": "an id number that reference to this handler, for use in [`UI.off`](#link)\n",
+          "parameters": [
+            {
+              "name": "key",
+              "comment": "event key",
+              "type": "string",
+              "default": false
+            },
+            {
+              "name": "fn",
+              "comment": "a [`UIHandler`](#link) callback function: `fn( target:UI, pt:Pt, type:string )`",
+              "type": "UIHandler",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "render",
+      "source": [
+        [
+          "UI.ts",
+          225,
+          8
+        ]
+      ],
+      "id": 906,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Take a custom render function to render this UI.",
+          "returns": "void",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "fn",
+              "comment": "a render function\n",
+              "type": " Fn(group:Group, )",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "state",
+      "source": [
+        [
+          "UI.ts",
+          126,
+          7
+        ]
+      ],
+      "id": 879,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Get and/or set a specific UI state.",
+          "returns": "any",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "key",
+              "comment": "state's name",
+              "type": "string",
+              "default": false
+            },
+            {
+              "name": "value",
+              "comment": "optionally set a new value for this state.key",
+              "type": "any",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "toString",
+      "source": [
+        [
+          "UI.ts",
+          233,
+          10
+        ]
+      ],
+      "id": 916,
+      "flags": {},
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Returns a string representation of this UI",
+          "returns": "string",
+          "returns_comment": false,
+          "parameters": [],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "unhold",
+      "source": [
+        [
+          "UI.ts",
+          199,
+          18
+        ]
+      ],
+      "id": 898,
+      "flags": {
+        "isProtected": true
+      },
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "Stop keeping track of this action",
+          "returns": "void",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "id",
+              "comment": "an id returned by the [`UI.hold`](#link) function\n",
+              "type": "number",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "fromCircle",
+      "source": [
+        [
+          "UI.ts",
+          73,
+          19
+        ]
+      ],
+      "id": 852,
+      "flags": {
+        "isStatic": true
+      },
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "A static helper function to create a Circle UI.",
+          "returns": "UI",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "group",
+              "comment": "a group that defines a rectangle",
+              "type": "GroupLike",
+              "default": false
+            },
+            {
+              "name": "states",
+              "comment": "optional a state object keep track of custom states for this UI",
+              "type": "__type",
+              "default": false
+            },
+            {
+              "name": "id",
+              "comment": "optional id string\n",
+              "type": "string",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "fromPolygon",
+      "source": [
+        [
+          "UI.ts",
+          84,
+          20
+        ]
+      ],
+      "id": 857,
+      "flags": {
+        "isStatic": true
+      },
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "A static helper function to create a Polygon UI.",
+          "returns": "UI",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "group",
+              "comment": "a group that defines a rectangle",
+              "type": "GroupLike",
+              "default": false
+            },
+            {
+              "name": "states",
+              "comment": "optional a state object keep track of custom states for this UI",
+              "type": "__type",
+              "default": false
+            },
+            {
+              "name": "id",
+              "comment": "optional id string\n",
+              "type": "string",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "fromRectangle",
+      "source": [
+        [
+          "UI.ts",
+          62,
+          22
+        ]
+      ],
+      "id": 847,
+      "flags": {
+        "isStatic": true
+      },
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "A static helper function to create a Rectangle UI.",
+          "returns": "UI",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "group",
+              "comment": "a group that defines a rectangle",
+              "type": "GroupLike",
+              "default": false
+            },
+            {
+              "name": "states",
+              "comment": "optional a state object keep track of custom states for this UI",
+              "type": "__type",
+              "default": false
+            },
+            {
+              "name": "id",
+              "comment": "optional id string\n",
+              "type": "string",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "fromUI",
+      "source": [
+        [
+          "UI.ts",
+          94,
+          15
+        ]
+      ],
+      "id": 862,
+      "flags": {
+        "isStatic": true
+      },
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "A static helper function to create a new UI based on another UI.",
+          "returns": "UI",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "ui",
+              "comment": "base UI",
+              "type": "UI",
+              "default": false
+            },
+            {
+              "name": "states",
+              "comment": "optional a state object keep track of custom states for this UI\n",
+              "type": "object",
+              "default": false
+            },
+            {
+              "name": "id",
+              "comment": "",
+              "type": "string",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    },
+    {
+      "name": "track",
+      "source": [
+        [
+          "UI.ts",
+          214,
+          14
+        ]
+      ],
+      "id": 901,
+      "flags": {
+        "isStatic": true
+      },
+      "overrides": false,
+      "inherits": false,
+      "signatures": [
+        {
+          "comment": "A static function to listen for a list of UIs. See also [`UI.listen`](#link).",
+          "returns": "void",
+          "returns_comment": false,
+          "parameters": [
+            {
+              "name": "uis",
+              "comment": "an array of UI",
+              "type": "UI[]",
+              "default": false
+            },
+            {
+              "name": "key",
+              "comment": "an action key. Can be one of `UIPointerActions` or a custom one.",
+              "type": "string",
+              "default": false
+            },
+            {
+              "name": "p",
+              "comment": "A point to check\n",
+              "type": "PtLike",
+              "default": false
+            }
+          ],
+          "tags": []
+        }
+      ]
+    }
+  ],
+  "variables": [],
+  "properties": [],
+  "flags": {},
+  "extends": [],
+  "implements": []
+}

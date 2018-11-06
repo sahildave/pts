@@ -1,0 +1,104 @@
+{
+  "name": "UIShape",
+  "source": [
+    [
+      "UI.ts",
+      11,
+      20
+    ]
+  ],
+  "kind": "Objectliteral",
+  "id": 1200,
+  "comment": "**[Experimental]** A set of string constatns to represent different UI types, for use in [`UI`](#link) instances.",
+  "constructor": [],
+  "accessors": [],
+  "methods": [],
+  "variables": [
+    {
+      "name": "circle",
+      "source": [
+        [
+          "UI.ts",
+          12,
+          32
+        ]
+      ],
+      "id": 1202,
+      "flags": {},
+      "type": "circle",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "line",
+      "source": [
+        [
+          "UI.ts",
+          12,
+          90
+        ]
+      ],
+      "id": 1205,
+      "flags": {},
+      "type": "line",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "polygon",
+      "source": [
+        [
+          "UI.ts",
+          12,
+          51
+        ]
+      ],
+      "id": 1203,
+      "flags": {},
+      "type": "polygon",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "polyline",
+      "source": [
+        [
+          "UI.ts",
+          12,
+          72
+        ]
+      ],
+      "id": 1204,
+      "flags": {},
+      "type": "polyline",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "rectangle",
+      "source": [
+        [
+          "UI.ts",
+          12,
+          11
+        ]
+      ],
+      "id": 1201,
+      "flags": {},
+      "type": "rectangle",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    }
+  ],
+  "properties": [],
+  "flags": {
+    "isConst": true
+  },
+  "extends": [],
+  "implements": []
+}

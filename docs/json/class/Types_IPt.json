@@ -1,0 +1,94 @@
+{
+  "name": "IPt",
+  "source": [
+    [
+      "Types.ts",
+      10,
+      20
+    ]
+  ],
+  "kind": "Interface",
+  "id": 1219,
+  "comment": "Typescript only: IPt is an interface that represents an object with x, y, z, w properties.",
+  "constructor": [],
+  "accessors": [],
+  "methods": [],
+  "variables": [],
+  "properties": [
+    {
+      "name": "w",
+      "source": [
+        [
+          "Types.ts",
+          14,
+          3
+        ]
+      ],
+      "id": 1223,
+      "flags": {
+        "isOptional": true
+      },
+      "type": "w",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "x",
+      "source": [
+        [
+          "Types.ts",
+          11,
+          3
+        ]
+      ],
+      "id": 1220,
+      "flags": {
+        "isOptional": true
+      },
+      "type": "x",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "y",
+      "source": [
+        [
+          "Types.ts",
+          12,
+          3
+        ]
+      ],
+      "id": 1221,
+      "flags": {
+        "isOptional": true
+      },
+      "type": "y",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "z",
+      "source": [
+        [
+          "Types.ts",
+          13,
+          3
+        ]
+      ],
+      "id": 1222,
+      "flags": {
+        "isOptional": true
+      },
+      "type": "z",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    }
+  ],
+  "flags": {},
+  "extends": [],
+  "implements": []
+}

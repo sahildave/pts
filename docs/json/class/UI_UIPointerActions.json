@@ -1,0 +1,200 @@
+{
+  "name": "UIPointerActions",
+  "source": [
+    [
+      "UI.ts",
+      19,
+      29
+    ]
+  ],
+  "kind": "Objectliteral",
+  "id": 1206,
+  "comment": "**[Experimental]** A set of string constants to represent different UI events.",
+  "constructor": [],
+  "accessors": [],
+  "methods": [],
+  "variables": [
+    {
+      "name": "all",
+      "source": [
+        [
+          "UI.ts",
+          20,
+          147
+        ]
+      ],
+      "id": 1217,
+      "flags": {},
+      "type": "all",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "down",
+      "source": [
+        [
+          "UI.ts",
+          20,
+          16
+        ]
+      ],
+      "id": 1208,
+      "flags": {},
+      "type": "down",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "drag",
+      "source": [
+        [
+          "UI.ts",
+          20,
+          44
+        ]
+      ],
+      "id": 1210,
+      "flags": {},
+      "type": "drag",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "drop",
+      "source": [
+        [
+          "UI.ts",
+          20,
+          76
+        ]
+      ],
+      "id": 1212,
+      "flags": {},
+      "type": "drop",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "enter",
+      "source": [
+        [
+          "UI.ts",
+          20,
+          117
+        ]
+      ],
+      "id": 1215,
+      "flags": {},
+      "type": "enter",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "leave",
+      "source": [
+        [
+          "UI.ts",
+          20,
+          133
+        ]
+      ],
+      "id": 1216,
+      "flags": {},
+      "type": "leave",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "move",
+      "source": [
+        [
+          "UI.ts",
+          20,
+          30
+        ]
+      ],
+      "id": 1209,
+      "flags": {},
+      "type": "move",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "out",
+      "source": [
+        [
+          "UI.ts",
+          20,
+          103
+        ]
+      ],
+      "id": 1214,
+      "flags": {},
+      "type": "out",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "over",
+      "source": [
+        [
+          "UI.ts",
+          20,
+          90
+        ]
+      ],
+      "id": 1213,
+      "flags": {},
+      "type": "over",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "uidrag",
+      "source": [
+        [
+          "UI.ts",
+          20,
+          60
+        ]
+      ],
+      "id": 1211,
+      "flags": {},
+      "type": "uidrag",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    },
+    {
+      "name": "up",
+      "source": [
+        [
+          "UI.ts",
+          20,
+          4
+        ]
+      ],
+      "id": 1207,
+      "flags": {},
+      "type": "up",
+      "overrides": false,
+      "inherits": false,
+      "comment": ""
+    }
+  ],
+  "properties": [],
+  "flags": {
+    "isConst": true
+  },
+  "extends": [],
+  "implements": []
+}
