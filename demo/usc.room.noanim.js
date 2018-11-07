@@ -46,10 +46,15 @@ window.demoDescription = "Fitting four circles inside and outside of four triang
 		}
 		var alpha = ((Num.cycle(time % 3000 / 3000)) / 2) + 0.4;
 		alpha = 1;
-		form.fill(Color.from(0, 0, 255, alpha).toString("rgba")).stroke("rgba(0,0,0)").polygon([p1, p2, pointer, p6]);
-		form.fill(Color.from(255, 255, 255, alpha).toString("rgba")).stroke("rgba(0,0,0)").polygon([p2, p3, p4, pointer]);
-		form.fill(Color.from(0, 255, 0, alpha).toString("rgba")).stroke("rgba(0,0,0)").polygon([pointer, p4, p5, p6]);
-		form.fill("#123").point(space.pointer, 5);
+        //  var poly =Polygon.convexHull([p1, p2, p3, p4, p5, p6]);
+        // poly.shear2D( (Num.cycle( time%5000/5000 ) - 0.5)/2, space.center );
+        // poly.shear2D( -10, space.center );
+        // form.strokeOnly("#123", 10).polygon( poly);
+
+		form.fill(Color.from(0, 0, 255, alpha).toString("rgba")).polygon([p1, p2, pointer, p6]);
+		form.fill(Color.from(255, 255, 255, alpha).toString("rgba")).polygon([p2, p3, p4, pointer]);
+		form.fill(Color.from(0, 255, 0, alpha).toString("rgba")).polygon([pointer, p4, p5, p6]);
+		// form.fill("#123").point(space.pointer, 5);
 		// form.fontWidthEstimate(true);
 		// var group1 = Group.fromPtArray([p1, p2]);
 		// var group2 = Group.fromPtArray([p2, pointer]);
@@ -67,7 +72,10 @@ window.demoDescription = "Fitting four circles inside and outside of four triang
 		// var curve3 = Polygon.convexHull( [pointer, p4, p5, p6 ] );
 		// curve3.insert( curve3.slice(0, 3), curve3.length );
 		// form.strokeOnly("#123", 10).polygon( Curve.bspline( curve3, 50) );
-		// U
+    
+       
+
+        // U
 		var uGroupTop = Group.fromPtArray([p1, p2]);
 		var uGroupBottom = Group.fromPtArray([p6, pointer]);
 		var uPointsTop = Group.fromPtArray([uGroupTop.interpolate(0.25), uGroupTop.interpolate(0.75)]);
@@ -80,55 +88,59 @@ window.demoDescription = "Fitting four circles inside and outside of four triang
 		// form.fill("#123").point(uPointsCenter[0]).point(uPointsCenter[1]);
 		var uGroup = Group.fromPtArray([uPointsTop[0], uPointsTop[1], uPointsCenter[1], uPointsCenter[0]]);
 		form.fillOnly("rgb(255,0,0)").polygon(uGroup);
-		// S
-		var sGroupRight = Group.fromPtArray([p3, p4]);
+		
+        // S
+		var sGroupRight =	 Group.fromPtArray([p3, p4]);
 		var sGroupLeft = Group.fromPtArray([p2, pointer]);
-		var sPointsRight = Group.fromPtArray([sGroupRight.interpolate(0.25), sGroupRight.interpolate(0.5), sGroupRight.interpolate(0.75)]);
-		var sPointsLeft = Group.fromPtArray([sGroupLeft.interpolate(0.25), sGroupLeft.interpolate(0.5), sGroupLeft.interpolate(0.75)]);
+        var sGroupBottom = Group.fromPtArray([pointer, p4]);
+		var sPointsRight = Group.fromPtArray([sGroupRight.interpolate(0.25), sGroupRight.interpolate(0.5)]);
+		var sPointsLeft = Group.fromPtArray([sGroupLeft.interpolate(0.25), sGroupLeft.interpolate(0.5)]);
 		var sPointsMidStart = Group.fromPtArray([sPointsLeft[0], sPointsRight[0]]);
 		var sPointsMidCenter = Group.fromPtArray([sPointsLeft[1], sPointsRight[1]]);
-		var sPointsMidEnd = Group.fromPtArray([sPointsLeft[2], sPointsRight[2]]);
 		var sPointsShapeMid = Group.fromPtArray([sPointsMidStart.interpolate(0.33)]);
-		var sPointsShapeCenter = Group.fromPtArray([sPointsMidCenter.interpolate(0.33), sPointsMidCenter.interpolate(0.66)]);
-		var sPointsShapeEnd = Group.fromPtArray([sPointsMidEnd.interpolate(0.66)]);
+		var sPointsShapeCenter = Group.fromPtArray([sPointsMidCenter.interpolate(0.66)]);
+		var sPointsShapeEnd = Group.fromPtArray([sGroupBottom.interpolate(0.33), sGroupBottom.interpolate(0.66)]);
 		// form.fill("#123").point(p2).point(p3).point(sPointsRight[0]).point(sPointsShapeMid[0]);
-		// form.fill("#123").point(sPointsShapeCenter[0]).point(sPointsShapeCenter[1]);
-		// form.fill("#123").point(sPointsShapeEnd[0]).point(sPointsMidEnd[0]);
-		var sGroup = Group.fromPtArray([p2, p3, sPointsRight[0], sPointsShapeMid[0], sPointsShapeCenter[0], sPointsShapeCenter[1], sPointsShapeEnd[0], sPointsMidEnd[0]]);
+		// form.fill("#123").point(sPointsShapeEnd[0]).point(sPointsShapeEnd[1]);
+		// form.fill("#123").point(sPointsShapeCenter[0]).point(sPointsRight[1]);
+		var sGroup = Group.fromPtArray([sPointsRight[0], sPointsShapeMid[0], sPointsShapeEnd[0], sPointsShapeEnd[1], sPointsShapeCenter[0], sPointsRight[1]]);
 		form.fillOnly("rgb(255,0,0)").polygon(sGroup);
-		// C
+		
+        // C
 		var cGroupRight = Group.fromPtArray([pointer, p4]);
 		var cGroupLeft = Group.fromPtArray([p6, p5]);
-		var cPointsRight = Group.fromPtArray([cGroupRight.interpolate(0.25), cGroupRight.interpolate(0.75)]);
-		var cPointsLeft = Group.fromPtArray([cGroupLeft.interpolate(0.25), cGroupLeft.interpolate(0.75)]);
+		var cPointsRight = Group.fromPtArray([cGroupRight.interpolate(0.33), cGroupRight.interpolate(0.66)]);
+		var cPointsLeft = Group.fromPtArray([cGroupLeft.interpolate(0.33), cGroupLeft.interpolate(0.66)]);
 		var cGroupMidTop = Group.fromPtArray([cPointsLeft[0], cPointsRight[0]]);
 		var cGroupMidBottom = Group.fromPtArray([cPointsLeft[1], cPointsRight[1]]);
-		var cPointsCenter = Group.fromPtArray([cGroupMidTop.interpolate(0.33), cGroupMidBottom.interpolate(0.33)]);
+		var cPointsCenter = Group.fromPtArray([cGroupMidTop.interpolate(0.25), cGroupMidBottom.interpolate(0.25)]);
 		// form.fill("#123").point(cGroupMidTop[0]).point(cGroupMidTop[1]);
 		// form.fill("#123").point(cGroupMidBottom[0]).point(cGroupMidBottom[1]);
 		// form.fill("#123").point(cPointsCenter[0]).point(cPointsCenter[1]);
 		var cGroup = Group.fromPtArray([cPointsCenter[0], cGroupMidTop[1], cGroupMidBottom[1], cPointsCenter[1]]);
 		form.fillOnly("rgb(255,0,0)").polygon(cGroup);
-		form.fill("#123").font(12, "bold").text(new Pt({
-			x: 0,
-			y: 50
-		}), uPointsTop[0] + "," + uPointsTop[1] + "," + uPointsCenter[1] + "," + uPointsCenter[0]);
-		form.fill("#123").font(12, "bold").text(new Pt({
-			x: 0,
-			y: 100
-		}), sPointsLeft);
-		form.fill("#123").font(12, "bold").text(new Pt({
-			x: 0,
-			y: 150
-		}), sPointsMidStart);
-		form.fill("#123").font(12, "bold").text(new Pt({
-			x: 0,
-			y: 200
-		}), sPointsMidCenter);
-		form.fill("#123").font(12, "bold").text(new Pt({
-			x: 0,
-			y: 250
-		}), sPointsMidEnd);
+		
+        
+        // form.fill("#123").font(12, "bold").text(new Pt({
+		// 	x: 0,
+		// 	y: 50
+		// }), uPointsTop[0] + "," + uPointsTop[1] + "," + uPointsCenter[1] + "," + uPointsCenter[0]);
+		// form.fill("#123").font(12, "bold").text(new Pt({
+		// 	x: 0,
+		// 	y: 100
+		// }), sPointsLeft);
+		// form.fill("#123").font(12, "bold").text(new Pt({
+		// 	x: 0,
+		// 	y: 150
+		// }), sPointsMidStart);
+		// form.fill("#123").font(12, "bold").text(new Pt({
+		// 	x: 0,
+		// 	y: 200
+		// }), sPointsMidCenter);
+		// form.fill("#123").font(12, "bold").text(new Pt({
+		// 	x: 0,
+		// 	y: 250
+		// }), sPointsMidEnd);
 	});
 })();
 /*
