@@ -3,7 +3,7 @@
 window.demoDescription = "Fitting four circles inside and outside of four triangles, which are connected to the pointer.";
 //// Demo code starts (anonymous function wrapper is optional) ---
 (function() {
-	var run = Pts.quickStart("#pt", "#fe3");
+	var run = Pts.quickStart("#pt", "#ff0");
 	run((time, ftime) => {
 		var width = space.width;
 		var height = space.height;
@@ -46,8 +46,10 @@ window.demoDescription = "Fitting four circles inside and outside of four triang
 		}
 		var alpha = ((Num.cycle(time % 3000 / 3000)) / 2) + 0.4;
 		alpha = 1;
-        var poly =Polygon.convexHull([p1, p2, p3, p4, p5, p6]);
-        poly.shear2D( (Num.cycle( time%5000/5000 ) - 0.5)/2, space.center );
+        //  var poly =Polygon.convexHull([p1, p2, p3, p4, p5, p6]);
+        // poly.shear2D( (Num.cycle( time%5000/5000 ) - 0.5)/2, space.center );
+        // poly.shear2D( -10, space.center );
+        // form.strokeOnly("#123", 10).polygon( poly);
 
 		form.fill(Color.from(0, 0, 255, alpha).toString("rgba")).polygon([p1, p2, pointer, p6]);
 		form.fill(Color.from(255, 255, 255, alpha).toString("rgba")).polygon([p2, p3, p4, pointer]);

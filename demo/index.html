@@ -4,7 +4,7 @@
 	<title>Pts.js Demos</title>
 
     <meta charset="UTF-8">
-	<script type="text/javascript" src="../dist/pts.min.js"></script>
+	<script type="text/javascript" src="./dist/pts.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="Interactive demos of Pts. Pts is a javascript library that enables you to compose and visualize points in spaces.">
 
@@ -50,7 +50,7 @@
         src = document.createElement('script');
         src.setAttribute("type", "text/javascript");
         src.setAttribute("id", "src");
-        src.setAttribute("src", "../demo/" + qfile + ".js");
+        src.setAttribute("src", "./" + qfile + ".js");
 
         var link = document.createElement("a");
         link.setAttribute("class", "source-code");
@@ -95,7 +95,7 @@
     <a href="../guide/Get-started-0100.html">guides</a>
     <a href="../docs/">docs</a>
     <a href="../study/index.html">studies</a>
-    <a href="https://github.com/williamngan/pts">github</a>
+    <a href="https://github.com/sahildave/pts">github</a>
   </div>
 </div>
 
@@ -152,6 +152,15 @@
         <p class="demo" data-src="https://github.com/williamngan/pts-react-example"><span>↗ React example</span></p>
         <p class="demo" data-src="https://github.com/williamngan/pts/blob/master/demo/more/tfjs_posenet/README.md"><span>↗ tensorflow.js example</span></p>
         
+        <p class="section">&nbsp;</p>
+        <p class="section">USC</p>
+        <p class="demo" data-src="usc.room_noanim"><span>USC.</span><strong>Room No Anim</strong></p>
+        <p class="demo" data-src="usc.room_anim"><span>USC.</span><strong>Room Auto Anim</strong></p>
+        <p class="demo" data-src="usc.worms"><span>USC.</span><strong>Room Worms</strong></p>
+        <p class="demo" data-src="usc.circles_s"><span>USC.</span><strong>Circles</strong></p>
+        <p class="demo" data-src="usc.circles_connected_s"><span>USC.</span><strong>Circles Connected</strong></p>
+        <p class="demo" data-src="usc.circles_variable"><span>USC.</span><strong>Circles Variable</strong></p>
+        <p class="demo" data-src="usc.shadows_c_sq"><span>USC.</span><strong>Square Shadow</strong></p>
 
     </div>
     <div id="hint"></div>
@@ -164,7 +173,7 @@
 
     var index = window.location.href.indexOf("?name");
     if ( index < 0 ) {
-        window.location.href = window.location.origin+window.location.pathname+"?name=usc.incircle";
+        window.location.href = window.location.origin+window.location.pathname+"?name=usc.room_noanim";
     }
 
     var demos = document.querySelectorAll(".demo");
@@ -182,18 +191,5 @@
 	}
 
 </script>
-
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  
-    ga('create', 'UA-104913373-1', 'auto');
-    ga('send', 'pageview');
-  
-  </script>
-
-
 </body>
 </html>

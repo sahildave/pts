@@ -152,9 +152,9 @@ window.demoDescription = "Fitting four circles inside and outside of four triang
 		// 	x: 0,
 		// 	y: 200
 		// }), sPointsMidCenter);
-		form.fill("#123").font(12, "bold").text(new Pt({
-			x: 0,
-			y: 250
-		}), sPointsShapeMid);
+		// form.fill("#123").font(12, "bold").text(new Pt({
+		// 	x: 0,
+		// 	y: 250
+		// }), sPointsShapeMid);
 	});
 })();
