@@ -34,8 +34,8 @@ Pts.quickStart( "pt", "#f4f4f4" );
         console.log("-----\nSTARTING NEW - "+startNew+", FOR - "+key);
         var circlesList = new Group();
         
-        let circleX = Util.randomInt(space.innerBound[1].x * 0.66, space.innerBound[1].x * 0.25);
-        let circleY = Util.randomInt(0, space.innerBound[1].y * 0.25);
+        let circleX = Num.randomRange(space.innerBound[1].x * 0.33, space.innerBound[1].x * 0.66);
+        let circleY = Num.randomRange(space.innerBound[1].y * 0.25, space.innerBound[1].y * 0.33);
         let circleCenter = new Pt({x:circleX, y:circleY});
         
         var circle = Circle.fromCenter(circleCenter, circleSize);
