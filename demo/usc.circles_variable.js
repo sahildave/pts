@@ -16,10 +16,6 @@ Pts.quickStart( "pt", "#000" );
     let dirSlantUp = new Pt({x:Num.randomRange(-1, -0.5), y:Num.randomRange(0.5, 1)});
     let dirHoriz = new Pt({x:Num.randomRange(0.85, 1), y:0});
 
-    // let dirSlantDown = new Pt({x:-0.75, y:0.75});
-    // let dirSlantUp = new Pt({x:-0.75, y:0.75});
-    // let dirHoriz = new Pt({x:0.75, y:0});
-
     var copyOpacityStep = (COPY_OPACITY_END-COPY_OPACITY_START)/COPIES;
 
     var circleMap = [];
@@ -41,8 +37,6 @@ Pts.quickStart( "pt", "#000" );
             circleCenter = circle[0];
             console.log("Else - "+lastSavedCircle+", Center - "+circleCenter);
         }
-        // circlesList.push(circle);
-        // console.log("Should have added first - "+circlesList)
 
         var multiplier = MAGNITUDE/COPIES;
         if (variableMagnitude) {
